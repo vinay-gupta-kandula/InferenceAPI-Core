@@ -15,9 +15,8 @@ To run this project locally without Docker, follow these steps:
 
 1. **Clone the repository:**
 ```bash
-   git clone [https://github.com/vinay-gupta-kandula/InferenceAPI-Core.git](https://github.com/vinay-gupta-kandula/InferenceAPI-Core.git)
+   git clone https://github.com/vinay-gupta-kandula/InferenceAPI-Core.git
    cd InferenceAPI-Core
-
 ```
 
 2. **Create and activate a virtual environment:**
