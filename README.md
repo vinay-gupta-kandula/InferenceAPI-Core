@@ -2,51 +2,57 @@
 
 A high-performance RESTful API built with FastAPI for serving a pre-trained Large Language Model (LLM). This project bridges model research and MLOps by addressing asynchronous event management, memory footprints, and multi-stage containerization.
 
+## 🛠️ Tech Stack
+* **Web Framework:** FastAPI & Uvicorn
+* **Validation:** Pydantic (Strict input constraints to prevent DoS attacks via massive prompts)
+* **Machine Learning:** Hugging Face `transformers` & PyTorch
+* **Testing:** Pytest (Unit and Integration testing)
+* **Deployment:** Docker (Multi-stage build to drop heavy compilation tools and keep the final image small)
+
 ## 🚀 Local Setup Instructions
 
 To run this project locally without Docker, follow these steps:
 
 1. **Clone the repository:**
-   ```bash
-   git clone <your-github-repo-url>
+```bash
+   git clone [https://github.com/vinay-gupta-kandula/InferenceAPI-Core.git](https://github.com/vinay-gupta-kandula/InferenceAPI-Core.git)
    cd InferenceAPI-Core
 
 ```
 
 2. **Create and activate a virtual environment:**
+
 ```bash
-python -m venv venv
-# On Windows:
-.\venv\Scripts\Activate
-# On Linux/Mac:
-source venv/bin/activate
+   python -m venv venv
+   # On Windows:
+   .\venv\Scripts\Activate
+   # On Linux/Mac:
+   source venv/bin/activate
 
 ```
-
 
 3. **Install pinned dependencies:**
+
 ```bash
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
 ```
-
 
 4. **Set up your environment variables:**
 Rename `.env.example` to `.env` or create a new `.env` file at the root:
+
 ```text
-MODEL_NAME=distilgpt2
-PORT=8000
+   MODEL_NAME=distilgpt2
+   PORT=8000
 
 ```
-
 
 5. **Start the ASGI server:**
+
 ```bash
-uvicorn src.main:app --host 0.0.0.0 --port 8000
+   uvicorn src.main:app --host 0.0.0.0 --port 8000
 
 ```
-
-
 
 ## 🐳 Docker Execution Guide
 
@@ -86,6 +92,15 @@ curl -X 'POST' \
   "prompt": "The future of artificial intelligence is",
   "max_new_tokens": 50
 }'
+
+```
+
+## 🧪 Running the Test Suite
+
+This project includes automated tests to verify the Singleton loader works mathematically and that the API routes respond correctly.
+
+```bash
+pytest tests/
 
 ```
 
