@@ -64,7 +64,10 @@ docker-compose up --build
 
 ```
 
-The API will be instantly accessible at `http://localhost:8000/docs`.
+The API will be instantly accessible at:
+```bash
+ http://localhost:8000/docs
+ ```
 
 ## ⚡ API Usage Examples
 
